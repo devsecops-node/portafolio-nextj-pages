@@ -93,8 +93,8 @@
 }
 
 .animacion-bolder {
-  animation: animar-bold 2s linear alternate ;
-  -webkit-animation: animar-bold 2s linear alternate ;
+  animation: animar-bold 2s linear alternate slidein;
+  -webkit-animation: animar-bold 2s linear alternate slidein;
 }
 
 .animar_arriba{
