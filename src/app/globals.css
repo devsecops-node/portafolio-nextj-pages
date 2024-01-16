@@ -80,18 +80,22 @@ a {
 
 @keyframes correr {
   0% {
+    filter: blur(5px);
     transform: translateY(-100%);
     -webkit-transform: translateY(-100%);
     -moz-transform: translateY(-100%);
     -ms-transform: translateY(-100%);
     -o-transform: translateY(-100%);
+    -webkit-filter: blur(5px);
 }
   100%{
+    filter: blur(0);
     transform: translateY(0);
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
+    -webkit-filter: blur(0);
 }
 }
 

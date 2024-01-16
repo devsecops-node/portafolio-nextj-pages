@@ -15,7 +15,7 @@ const page = () => {
         <Link href="/" className='text-sky-500 font-bold transition-all duration-150 hover:scale-105 hover:font-bold'>Home ↗️</Link>
       </nav>
       <section className='flex justify-center items-center flex-1 gap-3'>
-        <p className='font-bold recorrer'>My Apreciacion del curso</p>
+        <p className='font-bold recorrer recorrer'>My Apreciacion del curso</p>
         <div className='p-4 mr-4 ml-4'>
           <section className='fade-in'>
             <p>Desque que inicio el curso, sabia que me encataria ya que a la especialidad a la que me quiero dedicar es justo por el lado del <span className='font-bold text-blue-700'>Desarrollo de software</span>. En realidad estoy mas enfoca en otras tecologias como
@@ -34,23 +34,23 @@ const page = () => {
             </p>
           </section>
           <section className='flex gap-4 justify-center mt-4'>
-            <a target='_blank' href="https://www.docker.com/" className='bg-[#f1f5f9] rounded-full p-2 flex items-center justify-center'>
+            <a target='_blank' href="https://www.docker.com/" className='bg-[#f1f5f9] fade-in rounded-full p-2 flex items-center justify-center'>
               <FaDocker className='text-blue-600 text-[40px] ' />
             </a>
-            <a target='_blank' href="https://kubernetes.io/docs/home/" className='bg-[#f1f5f9] rounded-full p-2 flex items-center justify-center'>
+            <a target='_blank' href="https://kubernetes.io/docs/home/" className='bg-[#f1f5f9] fade-in rounded-full p-2 flex items-center justify-center'>
               <SiKubernetes className='text-[#326de6] text-[40px]' />
 
             </a>
-            <a target='_blank' href="https://angular.dev/" className='bg-[#f1f5f9] rounded-full p-2 flex items-center justify-center'>
+            <a target='_blank' href="https://angular.dev/" className='bg-[#f1f5f9] fade-in rounded-full p-2 flex items-center justify-center'>
               <FaAngular className='text-red-600 text-[40px]' />
             </a>
-            <a target='_blank' href="https://nestjs.com/" className='bg-[#f1f5f9] rounded-full p-2 flex items-center justify-center'>
+            <a target='_blank' href="https://nestjs.com/" className='bg-[#f1f5f9] fade-in rounded-full p-2 flex items-center justify-center'>
               <SiNestjs className='text-[#e0234e] text-[40px]' />
             </a>
-            <a target='_blank' href="https://nodejs.org/en" className='bg-[#f1f5f9] rounded-full p-2 flex items-center justify-center'>
+            <a target='_blank' href="https://nodejs.org/en" className='bg-[#f1f5f9] fade-in rounded-full p-2 flex items-center justify-center'>
               <FaNodeJs className='text-green-600 text-[40px]' />
             </a>
-            <a target='_blank' href="https://nextjs.org/" className='bg-[#f1f5f9] rounded-full p-2 flex items-center justify-center'>
+            <a target='_blank' href="https://nextjs.org/" className='bg-[#f1f5f9] fade-in rounded-full p-2 flex items-center justify-center'>
               <TbBrandNextjs className='text-black text-[40px]'/>
             </a>
 
