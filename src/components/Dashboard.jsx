@@ -5,7 +5,19 @@ import { useRef } from 'react'
 import Proyects from './Proyects'
 
 const Dashboard = () => {
-
+  const hiddenElements = document.querySelectorAll('.otro')
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      console.log(entry)
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show')
+      } else {
+        entry.target.classList.remove('show')
+      }
+    })
+  })
+  hiddenElements.forEach((el) => observer.observe(el))
+  console.log(hiddenElements)
   const scrollToPortada = () => {
     const portada = document.getElementById('portada')
 
@@ -26,7 +38,7 @@ const Dashboard = () => {
 
   return (
     <section className={stles.home_view}>
-      <div className='h-screen flex justify-center items-center flex-col'>
+      <div className='h-screen flex justify-center flex-col items-center'>
         <div className={stles.home_view_principal}>
           <p className={stles.animar_text} id='detec'> Hey, I am <span className="animacion-bolder">Jordan
             Huaman</span>, I am asphiring to <span className={stles.detect}>Software Enginiering</span>
@@ -36,28 +48,21 @@ const Dashboard = () => {
           <a onClick={scrollToPortada} className={stles.animar_abajo}>
             <p className='animate-bounce transition-all hover:font-bold duration-150 hover:scale-105'>Portada</p>
           </a>
-          {/* <a href="" className={stles.animar_abajo}>
-            <p>Bienvenida Introduccion</p>
-          </a>
-          <a href="" className={stles.animar_arriba}>
-            <p>Tabla de contenido</p>
-          </a><a href="" className={stles.animar_arriba}>
-            <p>Informacion sobre mi</p>
-          </a> */}
-          <a  onClick={scrollToProyects} className={stles.animar_abajo}>
+          <a onClick={scrollToProyects} className={stles.animar_abajo}>
             <p className='animate-bounce transition-all hover:font-bold duration-150 hover:scale-105'>Trabajos realizados</p>
           </a>
+        </div>
+      </div>
 
-        </div>
-        <div>
-        </div>
-      </div>
-      <div id='portada'>
-        <Portada scrolProyects={scrollToProyects}/>
-      </div>
-      <div id='proyects'>
-        <Proyects/>
-      </div>
+      <section id='portada' className='otro'>
+        <Portada scrolProyects={scrollToProyects} />
+      </section>
+
+
+      <section id='proyects' className='otro'>
+        <Proyects />
+      </section>
+
     </section>
   )
 }
