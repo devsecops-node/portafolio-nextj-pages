@@ -3,6 +3,7 @@ import stles from "@/styles/dashboard.module.css"
 import Portada from './Portada'
 import { useRef } from 'react'
 import Proyects from './Proyects'
+import Link from 'next/link'
 
 const Dashboard = () => {
 
@@ -48,13 +49,18 @@ const Dashboard = () => {
             Huaman</span>, I am asphiring to <span className={stles.detect}>Software Enginiering</span>
           </p>
         </div>
-        <div className={stles.home_view_links}>
-          <a onClick={scrollToPortada} className={stles.animar_abajo}>
-            <p className='animate-bounce transition-all hover:font-bold duration-150 hover:scale-105'>Portada</p>
-          </a>
-          <a onClick={scrollToProyects} className={stles.animar_abajo}>
-            <p className='animate-bounce transition-all hover:font-bold duration-150 hover:scale-105'>Trabajos realizados</p>
-          </a>
+        <div className='w-[100%] flex shadow-lg shadow-slate-100'>
+          <nav className={stles.home_view_links}>
+            <a onClick={scrollToPortada} className={stles.animar_abajo}>
+              <p className='animate-bounce transition-all hover:font-bold duration-150 hover:scale-105'>Portada</p>
+            </a>
+            <a onClick={scrollToProyects} className={stles.animar_abajo}>
+              <p className='animate-bounce transition-all hover:font-bold duration-150 hover:scale-105'>Trabajos realizados</p>
+            </a>
+            <Link href='reflexion' className={stles.animar_abajo}>
+              <p className='animate-bounce transition-all hover:font-bold duration-150 hover:scale-105'>Reflexion</p>
+            </Link>
+          </nav>
         </div>
       </div>
 
