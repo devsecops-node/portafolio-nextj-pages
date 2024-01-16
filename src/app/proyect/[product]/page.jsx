@@ -37,7 +37,7 @@ export default function Page({ params }) {
           <Link href="/" className="text-sky-600 font-bold mt-[20px] animate-bounce">
             Home ↗️
           </Link>
-          <Link href={`/proyect/${siguiente}`} className="text-blue-800 font-bold mt-[20px] ">
+          <Link href={`/proyect/${siguiente}`} className="text-blue-800 font-bold mt-[20px] z-40">
             Siguiente 🔴
           </Link>
 
