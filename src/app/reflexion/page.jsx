@@ -15,9 +15,9 @@ const page = () => {
         <Link href="/" className='text-sky-500 font-bold transition-all duration-150 hover:scale-105 hover:font-bold'>Home ↗️</Link>
       </nav>
       <section className='flex justify-center items-center flex-1 gap-3'>
-        <p className='font-bold'>My Apreciacion del curso</p>
+        <p className='font-bold recorrer'>My Apreciacion del curso</p>
         <div className='p-4 mr-4 ml-4'>
-          <section>
+          <section className='fade-in'>
             <p>Desque que inicio el curso, sabia que me encataria ya que a la especialidad a la que me quiero dedicar es justo por el lado del <span className='font-bold text-blue-700'>Desarrollo de software</span>. En realidad estoy mas enfoca en otras tecologias como
               <span className='font-bold text-green-700 text-[12px]'> NodeJS</span> <span className='font-bold text-red-700 text-[12px]'>Angular</span> pero lo aprendido se transfiero, y en verdad me atrevo a decir que esta inscursion en el curso, me ayudo
               a explorar otras tecnologias que me encantaron, al usar <span className='font-bold text-[12px] text-gray-500'>Java</span> y <span className='font-bold text-[12px] text-green-400'> SpringBoot</span>. Aparte de ello, tambien me gusta mucho aprender otras
@@ -51,7 +51,7 @@ const page = () => {
               <FaNodeJs className='text-green-600 text-[40px]' />
             </a>
             <a target='_blank' href="https://nextjs.org/" className='bg-[#f1f5f9] rounded-full p-2 flex items-center justify-center'>
-              <TbBrandNextjs className='text-black text-[40px]' />
+              <TbBrandNextjs className='text-black text-[40px]'/>
             </a>
 
           </section>
