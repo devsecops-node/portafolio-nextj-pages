@@ -1,23 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import stles from "@/styles/dashboard.module.css"
 import Portada from './Portada'
 import { useRef } from 'react'
 import Proyects from './Proyects'
 
 const Dashboard = () => {
-  const hiddenElements = document.querySelectorAll('.otro')
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      console.log(entry)
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show')
-      } else {
-        entry.target.classList.remove('show')
-      }
+
+  useEffect(() => {
+    const hiddenElements = document.querySelectorAll('.otro')
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry)
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show')
+        } else {
+          entry.target.classList.remove('show')
+        }
+      })
     })
-  })
-  hiddenElements.forEach((el) => observer.observe(el))
-  console.log(hiddenElements)
+    hiddenElements.forEach((el) => observer.observe(el))
+    console.log(hiddenElements)
+  }, [])
+
   const scrollToPortada = () => {
     const portada = document.getElementById('portada')
 
@@ -38,7 +42,7 @@ const Dashboard = () => {
 
   return (
     <section className={stles.home_view}>
-      <div className='h-screen flex justify-center flex-col items-center'>
+      <div className='h-screen flex justify-center flex-col items-center otro'>
         <div className={stles.home_view_principal}>
           <p className={stles.animar_text} id='detec'> Hey, I am <span className="animacion-bolder">Jordan
             Huaman</span>, I am asphiring to <span className={stles.detect}>Software Enginiering</span>
