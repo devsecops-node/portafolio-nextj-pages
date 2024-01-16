@@ -58,7 +58,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <section id='portada' className='otro'>
+      <section id='portada' className='otro bg-red-400'>
         <Portada scrolProyects={scrollToProyects} />
       </section>
 

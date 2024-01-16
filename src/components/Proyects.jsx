@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './Card';
 import styles from '@/styles/proyectos.module.css'
+import LoadMore from './LoadMore';
 
 export const proyectos = [
   {
@@ -138,7 +139,8 @@ const Proyects = () => {
     <div className='h-screen flex justify-center items-center flex-col'>
       <p className='text-sky-500 font-bold text-[20px]  tracking-tighter'>Proyectos realizados durante las 12 semanas</p>
       <div className={styles.proyectos}>
-        {planDeEstudios.map(proyec => <Card key={proyec.id} proyect={proyec} />)}
+        {planDeEstudios.slice(0,6).map(proyec => <Card key={proyec.id} proyect={proyec} />)}
+        <LoadMore/>
       </div>
     </div>
   )
