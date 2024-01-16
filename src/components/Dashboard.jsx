@@ -61,9 +61,7 @@ const Dashboard = () => {
       <section id='portada' className='otro bg-red-400'>
         <Portada scrolProyects={scrollToProyects} />
       </section>
-
-
-      <section id='proyects' className='otro'>
+      <section id='proyects' className='otro '>
         <Proyects />
       </section>
 

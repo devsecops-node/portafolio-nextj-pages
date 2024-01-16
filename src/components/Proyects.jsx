@@ -1,11 +1,12 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import Card from './Card';
 import styles from '@/styles/proyectos.module.css'
 import LoadMore from './LoadMore';
 
 export const proyectos = [
   {
-    id:1,
+    id: 1,
     semana: 1,
     tecnologias_usadas: [
       "Fundamentos de tecnologías web",
@@ -22,7 +23,7 @@ export const proyectos = [
 
 export const planDeEstudios = [
   {
-    id:1,
+    id: 1,
     semana: 1,
     tecnologias_usadas: [
       "Fundamentos de tecnologías web",
@@ -36,7 +37,7 @@ export const planDeEstudios = [
     imagen: "https://cdn.thenewstack.io/media/2021/10/4f0ac3e0-visual_studio_code.png"
   },
   {
-    id:2,
+    id: 2,
     semana: 2,
     tecnologias_usadas: ["HTML", "XML", "SEO", "CSS3"],
     reflexion: "Estructura HTML y XML, Árbol DOM, Renderizado de Árbol",
@@ -44,7 +45,8 @@ export const planDeEstudios = [
     proyecto: "Diseño de una página web",
     resumen_de_clase: "Diseño flexbox, diseño fluido y diseño responsivo"
   },
-  {  id:3,
+  {
+    id: 3,
     semana: 3,
     tecnologias_usadas: ["Bootstrap", "Tailwind"],
     imagen: "https://miro.medium.com/v2/resize:fit:1400/1*_6ooq0R60ba3UT5c-QVemA.png",
@@ -53,7 +55,7 @@ export const planDeEstudios = [
     resumen_de_clase: "Tipografía, Layout, Flexbox, Application UI"
   },
   {
-    id:4,
+    id: 4,
     semana: 4,
     tecnologias_usadas: ["Javascript", "DOM", "Canvas"],
     imagen: "https://static.javatpoint.com/javascriptpages/images/canvasjs.png",
@@ -62,7 +64,7 @@ export const planDeEstudios = [
     resumen_de_clase: "Funciones, Clases, Arrays, Objetos Map y Set"
   },
   {
-    id:5,
+    id: 5,
     semana: 5,
     tecnologias_usadas: ["Framework JS"],
     imagen: "https://gabrielchavez.me/storage/2022/06/vitejs-que-es.png",
@@ -71,7 +73,7 @@ export const planDeEstudios = [
     resumen_de_clase: "Gestión de dependencias, Desarrollo basado en componentes"
   },
   {
-    id:6,
+    id: 6,
     semana: 6,
     tecnologias_usadas: ["Eventos", "Condicionales", "Bucles", "APIs"],
     imagen: "https://media.geeksforgeeks.org/wp-content/uploads/20200418174636/GFG108-1.png",
@@ -80,7 +82,7 @@ export const planDeEstudios = [
     resumen_de_clase: "Promesas, Async await, Consumo de APIs con Axios"
   },
   {
-    id:7,
+    id: 7,
     semana: 7,
     tecnologias_usadas: ["Hooks"],
     imagen: "https://www.aluracursos.com/blog/assets/react-hooks/img2.png",
@@ -89,7 +91,7 @@ export const planDeEstudios = [
     resumen_de_clase: "UseState, UseEffect, UseContext, UseRef, UseReducer, UseCallback, useMemo"
   },
   {
-    id:8,
+    id: 8,
     semana: 9,
     tecnologias_usadas: ["Next JS", "Typescript"],
     imagen: "https://res.cloudinary.com/practicaldev/image/fetch/s--3KGtx8dm--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/yo35aymkgnlgfk6t5fcf.png",
@@ -98,7 +100,7 @@ export const planDeEstudios = [
     resumen_de_clase: "De javascript a typescript"
   },
   {
-    id:9,
+    id: 9,
     semana: 10,
     imagen: "https://miro.medium.com/v2/1*jJkEQpgZ8waQ5P-W5lhxuQ.png",
     tecnologias_usadas: ["Next JS", "Typescript", "Static Generate", "Incremental Static Generation"],
@@ -107,7 +109,7 @@ export const planDeEstudios = [
     resumen_de_clase: "Incremental Static Generation (ISG)"
   },
   {
-    id:10,
+    id: 10,
     semana: 11,
     tecnologias_usadas: ["Server Side Props", "Next Auth"],
     imagen: "https://next-auth.js.org/img/social-media-card.png",
@@ -116,7 +118,7 @@ export const planDeEstudios = [
     resumen_de_clase: "getServerSideProps, Next Auth, Middlewares"
   },
   {
-    id:11,
+    id: 11,
     semana: 13,
     tecnologias_usadas: ["Spring", "HTTP", "MVC", "API Rest"],
     imagen: "https://pbs.twimg.com/profile_images/1235868806079057921/fTL08u_H_400x400.png",
@@ -125,7 +127,7 @@ export const planDeEstudios = [
     resumen_de_clase: "Arquitectura API Rest"
   },
   {
-    id:12,
+    id: 12,
     semana: 14,
     tecnologias_usadas: ["Eureka", "Microservicios", "Configuración avanzada en Eureka", "Configuración en la nube"],
     imagen: "https://miro.medium.com/v2/resize:fit:596/1*WxZgzV2MgMwgovBs4wGP2Q.png",
@@ -135,14 +137,21 @@ export const planDeEstudios = [
   }
 ];
 const Proyects = () => {
+
+  const [current, setCurrent] = useState(6)
+
+  const loadMore = () => {
+    setCurrent(12)
+  }
   return (
-    <div className='h-screen flex justify-center items-center flex-col'>
+    <div className='min-h-screen flex justify-center items-center flex-col mt-auto mb-auto'>
       <p className='text-sky-500 font-bold text-[20px]  tracking-tighter'>Proyectos realizados durante las 12 semanas</p>
       <div className={styles.proyectos}>
-        {planDeEstudios.slice(0,6).map(proyec => <Card key={proyec.id} proyect={proyec} />)}
-        <LoadMore/>
+        {planDeEstudios.slice(0, current).map(proyec => <Card key={proyec.id} proyect={proyec} />)}
       </div>
+      <LoadMore loadM={loadMore} />
     </div>
+
   )
 }
 

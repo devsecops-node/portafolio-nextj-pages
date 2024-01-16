@@ -9,10 +9,11 @@ const Card = ({ proyect }) => {
   return (
     <Link onTouchMove={probando} href={`/proyect/${proyect.id}`} className='p-2 flex flex-col gap-1 rounded-md transition-all duration-150 hover:scale-105 ease-in-out hover:z-20 hover:border cursor-pointer'>
       <div className={styles.card}>
+        <p className='font-bold text-[15px] text-center'>Semana {proyect.semana}</p>
         <div className={styles.card_img}>
           <img src={proyect.imagen} alt="imagen not found" width={70} height={70} />
         </div>
-        <div className={styles.card_title}>Product {proyect.proyecto}</div>
+        <div className={styles.card_title}>{proyect.proyecto}</div>
         <div className={styles.card_subtitle}>{proyect.resumen_de_clase}</div>
         <hr className={styles.card_divider} />
         <div className={styles.card_footer}>
